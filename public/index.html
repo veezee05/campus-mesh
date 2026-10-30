@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Mesh</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="bar">
+    <div class="identity">
+      <span class="node-name" id="nodeName">connecting...</span>
+      <span class="node-id" id="nodeId"></span>
+    </div>
+    <div class="peers" id="peers"></div>
+    <div class="me">
+      <span class="mq" id="mqState" title="MQTT broker connection">mq</span>
+      <label for="who">you</label>
+      <input id="who" placeholder="roll number">
+    </div>
+  </header>
+
+  <main>
+    <section class="panel search">
+      <form id="searchForm">
+        <input id="query" placeholder="What do you need? e.g. hdmi, arduino, calculator" autocomplete="off">
+        <button type="submit">Search the mesh</button>
+      </form>
+      <p class="meta" id="searchMeta"></p>
+      <ul class="results" id="results"></ul>
+    </section>
+
+    <div class="side">
+      <section class="panel">
+        <h2>Waiting for you</h2>
+        <p class="meta" id="feedMeta">nothing yet</p>
+        <ul class="results" id="feed"></ul>
+      </section>
+
+      <section class="panel">
+        <h2>You are watching</h2>
+        <p class="meta" id="watchMeta">no standing requests</p>
+        <ul class="results" id="watching"></ul>
+      </section>
+
+      <section class="panel">
+        <h2>This node's inventory</h2>
+        <p class="meta" id="invMeta"></p>
+        <ul class="results" id="inventory"></ul>
+      </section>
+    </div>
+  </main>
+
+  <section class="panel handover" id="handoverPanel" hidden>
+    <div class="hhead">
+      <div>
+        <h2 id="handoverTitle">Handover</h2>
+        <p class="hstate" id="handoverState"></p>
+      </div>
+      <div class="hactions">
+        <button id="camBtn" class="ghost">Show the item</button>
+        <button id="handoverClose" class="ghost">Close</button>
+      </div>
+    </div>
+
+    <div class="hbody">
+      <div class="hvideo">
+        <video id="remoteVideo" autoplay playsinline hidden></video>
+        <video id="selfVideo" autoplay playsinline muted hidden></video>
+        <div class="qos" id="qos"></div>
+      </div>
+
+      <div class="hchat">
+        <ul class="chatlog" id="chatLog"></ul>
+        <form id="chatForm">
+          <input id="chatInput" placeholder="Where should I meet you?" autocomplete="off" disabled>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="toast" id="toast" hidden></div>
+  <script src="rtc.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
