@@ -1,0 +1,57 @@
+# Four containers: one dumb MQTT broker plus three nodes built from one image.
+#
+# Each node listens on gRPC 50051 INSIDE its own container - they are
+# distinguished by HOSTNAME, not by port. Compose provides the DNS, so
+# "node-ee:50051" is resolved fresh on every call.
+
+services:
+  broker:
+    build: ./broker
+    container_name: broker
+    ports:
+      - "1883:1883"
+
+  node-cs:
+    build: .
+    container_name: node-cs
+    environment:
+      NODE_ID: node-cs
+      NODE_NAME: "Computer Science Lab"
+      GRPC_PORT: "50051"
+      HTTP_PORT: "5001"
+      PEERS: "node-lib:50051,node-ee:50051"
+      MQTT_URL: "mqtt://broker:1883"
+    ports:
+      - "5001:5001"
+    depends_on:
+      - broker
+
+  node-lib:
+    build: .
+    container_name: node-lib
+    environment:
+      NODE_ID: node-lib
+      NODE_NAME: "Central Library"
+      GRPC_PORT: "50051"
+      HTTP_PORT: "5002"
+      PEERS: "node-cs:50051,node-ee:50051"
+      MQTT_URL: "mqtt://broker:1883"
+    ports:
+      - "5002:5002"
+    depends_on:
+      - broker
+
+  node-ee:
+    build: .
+    container_name: node-ee
+    environment:
+      NODE_ID: node-ee
+      NODE_NAME: "Electronics Lab"
+      GRPC_PORT: "50051"
+      HTTP_PORT: "5003"
+      PEERS: "node-cs:50051,node-lib:50051"
+      MQTT_URL: "mqtt://broker:1883"
+    ports:
+      - "5003:5003"
+    depends_on:
+      - broker
