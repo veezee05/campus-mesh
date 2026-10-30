@@ -1,0 +1,9 @@
+[
+  { "rid": "node-lib:cable:0001", "name": "HDMI Cable 3m", "category": "cable", "tags": ["hdmi", "cable", "display", "projector"], "status": "available", "holder": null, "version": 1, "lockedBy": null, "lockExpiry": null },
+  { "rid": "node-lib:book:0001", "name": "Tanenbaum - Distributed Systems", "category": "book", "tags": ["book", "distributed", "textbook", "reference"], "status": "available", "holder": null, "version": 1, "lockedBy": null, "lockExpiry": null },
+  { "rid": "node-lib:book:0002", "name": "Silberschatz - Operating System Concepts", "category": "book", "tags": ["book", "os", "textbook", "reference"], "status": "borrowed", "holder": "roll-4127", "version": 5, "lockedBy": null, "lockExpiry": null },
+  { "rid": "node-lib:charger:0001", "name": "Laptop Charger 45W Dell", "category": "charger", "tags": ["charger", "dell", "power", "laptop"], "status": "available", "holder": null, "version": 1, "lockedBy": null, "lockExpiry": null },
+  { "rid": "node-lib:calculator:0001", "name": "Casio FX-82 Calculator", "category": "calculator", "tags": ["calculator", "casio", "exam"], "status": "available", "holder": null, "version": 1, "lockedBy": null, "lockExpiry": null },
+  { "rid": "node-lib:lamp:0001", "name": "Clip-on Reading Lamp", "category": "lamp", "tags": ["lamp", "light", "reading"], "status": "available", "holder": null, "version": 1, "lockedBy": null, "lockExpiry": null },
+  { "rid": "node-lib:extension:0001", "name": "6-Socket Extension Board", "category": "extension", "tags": ["extension", "power", "socket", "board"], "status": "available", "holder": null, "version": 1, "lockedBy": null, "lockExpiry": null }
+]

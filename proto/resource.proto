@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package campus;
+
+// The published interface of a Campus Mesh node.
+//
+// Every node both SERVES and CONSUMES this service - there is no
+// client/server asymmetry between nodes. A fourth node joins the
+// network by implementing this file; no existing node changes.
+service ResourceNode {
+  rpc Search  (SearchRequest)  returns (SearchReply);
+  rpc Reserve (ReserveRequest) returns (ReserveReply);
+  rpc Ping    (PingRequest)    returns (PingReply);
+}
+
+message SearchRequest {
+  string query     = 1;  // free text, as the student typed it
+  string origin_id = 2;  // identifier of the node that started this search
+  uint64 lamport   = 3;  // logical clock of the sender
+  uint32 ttl       = 4;  // hops remaining; 0 means do not forward
+}
+
+message Resource {
+  string rid       = 1;  // node-ee:hdmi:0001  <- owner encoded in the identifier
+  string name      = 2;
+  string category  = 3;
+  string status    = 4;  // available | reserved | borrowed
+  string node_id   = 5;  // identifier of the owning node
+  string node_name = 6;  // human-facing name of the owning node
+  uint32 version   = 7;  // FA-2: optimistic concurrency control
+}
+
+message SearchReply {
+  string   node_id          = 1;
+  uint64   lamport          = 2;
+  repeated Resource matches = 3;
+}
+
+message ReserveRequest {
+  string rid       = 1;
+  string requester = 2;
+  uint32 hours     = 3;
+  uint64 lamport   = 4;
+}
+
+message ReserveReply {
+  bool   granted       = 1;
+  string reason        = 2;
+  string handover_room = 3;  // phase 6: WebRTC room id
+  uint64 lamport       = 4;
+  uint32 version       = 5;
+}
+
+message PingRequest {
+  string from    = 1;
+  uint64 lamport = 2;
+}
+
+message PingReply {
+  string node_id        = 1;
+  string node_name      = 2;
+  uint32 resource_count = 3;
+  uint64 lamport        = 4;
+}

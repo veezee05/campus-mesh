@@ -1,0 +1,9 @@
+[
+  { "rid": "node-cs:charger:0001", "name": "Laptop Charger 65W USB-C", "category": "charger", "tags": ["charger", "usb-c", "power", "laptop"], "status": "available", "holder": null, "version": 1, "lockedBy": null, "lockExpiry": null },
+  { "rid": "node-cs:projector:0001", "name": "Portable Projector", "category": "projector", "tags": ["projector", "display", "presentation"], "status": "borrowed", "holder": "seminar-hall-2", "version": 3, "lockedBy": null, "lockExpiry": null },
+  { "rid": "node-cs:adapter:0001", "name": "USB-C to VGA Adapter", "category": "adapter", "tags": ["adapter", "vga", "usb-c", "display"], "status": "available", "holder": null, "version": 1, "lockedBy": null, "lockExpiry": null },
+  { "rid": "node-cs:calculator:0001", "name": "Casio FX-991 Calculator", "category": "calculator", "tags": ["calculator", "casio", "exam"], "status": "available", "holder": null, "version": 1, "lockedBy": null, "lockExpiry": null },
+  { "rid": "node-cs:cable:0001", "name": "Ethernet Cable 5m", "category": "cable", "tags": ["ethernet", "lan", "cable", "rj45"], "status": "available", "holder": null, "version": 1, "lockedBy": null, "lockExpiry": null },
+  { "rid": "node-cs:webcam:0001", "name": "Logitech C270 Webcam", "category": "webcam", "tags": ["webcam", "camera", "video"], "status": "available", "holder": null, "version": 1, "lockedBy": null, "lockExpiry": null },
+  { "rid": "node-cs:mouse:0001", "name": "Wireless Mouse", "category": "mouse", "tags": ["mouse", "wireless", "peripheral"], "status": "available", "holder": null, "version": 1, "lockedBy": null, "lockExpiry": null }
+]

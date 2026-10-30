@@ -1,0 +1,4 @@
+[
+  { "rid": "node-dev:cable:0001", "name": "HDMI Cable 2m", "category": "cable", "tags": ["hdmi", "cable", "display"], "status": "available", "holder": null, "version": 1, "lockedBy": null, "lockExpiry": null },
+  { "rid": "node-dev:charger:0001", "name": "Laptop Charger 65W", "category": "charger", "tags": ["charger", "power", "laptop"], "status": "available", "holder": null, "version": 1, "lockedBy": null, "lockExpiry": null }
+]

@@ -1,0 +1,10 @@
+[
+  { "rid": "node-ee:cable:0001", "name": "HDMI Cable 1.5m", "category": "cable", "tags": ["hdmi", "cable", "display", "projector"], "status": "available", "holder": null, "version": 1, "lockedBy": null, "lockExpiry": null },
+  { "rid": "node-ee:board:0001", "name": "Arduino UNO R3", "category": "board", "tags": ["arduino", "uno", "board", "microcontroller"], "status": "available", "holder": null, "version": 1, "lockedBy": null, "lockExpiry": null },
+  { "rid": "node-ee:board:0002", "name": "ESP32 DevKit V1", "category": "board", "tags": ["esp32", "board", "wifi", "microcontroller"], "status": "available", "holder": null, "version": 1, "lockedBy": null, "lockExpiry": null },
+  { "rid": "node-ee:meter:0001", "name": "Digital Multimeter", "category": "meter", "tags": ["multimeter", "meter", "measurement"], "status": "available", "holder": null, "version": 1, "lockedBy": null, "lockExpiry": null },
+  { "rid": "node-ee:iron:0001", "name": "Soldering Iron 25W", "category": "iron", "tags": ["soldering", "iron", "tool"], "status": "borrowed", "holder": "roll-3302", "version": 2, "lockedBy": null, "lockExpiry": null },
+  { "rid": "node-ee:analyzer:0001", "name": "8-Channel Logic Analyzer", "category": "analyzer", "tags": ["logic", "analyzer", "debug", "measurement"], "status": "available", "holder": null, "version": 1, "lockedBy": null, "lockExpiry": null },
+  { "rid": "node-ee:adapter:0001", "name": "USB-C to HDMI Adapter", "category": "adapter", "tags": ["adapter", "hdmi", "usb-c", "display"], "status": "available", "holder": null, "version": 1, "lockedBy": null, "lockExpiry": null },
+  { "rid": "node-ee:breadboard:0001", "name": "Breadboard 830 point", "category": "breadboard", "tags": ["breadboard", "prototype", "board"], "status": "available", "holder": null, "version": 1, "lockedBy": null, "lockExpiry": null }
+]
